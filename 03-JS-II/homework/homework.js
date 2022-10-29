@@ -117,7 +117,6 @@ function esEntero(numero) {
   } else {
     return false;
   }
-  
 }
 
 function fizzBuzz(numero) {
