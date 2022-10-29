@@ -118,13 +118,13 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if(numero%3==0){
+  if((numero%3==0)&&(numero%5==0)){
+    return "fizzbuzz";
+  }else if(numero%3==0){
     return "fizz";
   }else if(numero%5==0){
     return "buzz";
-  }else if((numero%3==0)&&(numero%5==0)){
-    return "fizzbuzz";
-  }else{
+  } else{
     return numero;
   }
 }
@@ -136,6 +136,30 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+  
+  switch(true){
+    case ((num1==0)||(num2==0)||(num3==0)):
+      return "Error";
+    case ((num1<0)||(num2<0)||(num3<0)):
+      return "Hay negativos";
+    case ((num1>num2)&&(num1>num3)):
+      return "Número 1 es mayor y positivo";
+    case ((num3>num1)&&(num3>num2)):
+      return (num3+1);
+    default:
+    return false;   
+  }
+    /*if((num1==0)||(num2==0)||(num3==0)){
+    return "Error";
+  }else if((num1<0)||(num2<0)||(num3<0)){
+    return "Hay negativos";
+  }else if((num1>num2)||(num1>num3)){
+    return "Número 1 es mayor y positivo";
+  }else if((num3>num1)||(num3>num2)){
+    return (num3+1);
+  }else{
+    return false;
+  }*/
 }
 
 function esPrimo(numero) {
@@ -144,7 +168,17 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-
+  var i,p=0;
+  for(i=1;i<=numero;i++){
+    if(numero%i==0){
+      p++;
+    }
+  }
+  if(p==2){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 function esVerdadero(valor){
@@ -162,10 +196,10 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  var i,c=1;
-  for(i=10;i>=1;i--){
-    v[i]=6*c;
-    c++;
+  var i;
+  let v=[];
+  for(i=0;i<11;i++){
+    v.push(6*i);
   }
   return v;
 }
@@ -174,6 +208,23 @@ function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
   
+  if (numero.toString().length === 3) {
+    return true;
+  } else return false;
+
+  /* 
+  var c=0,nn=0;
+  while(numero!=0){
+    nn=numero%10;
+    numero=numero/10;
+    c++;
+  }
+  if(c==3){
+    return true;
+  }else{
+    return false;
+  } 
+  */
 }
 
 function doWhile(numero) {
