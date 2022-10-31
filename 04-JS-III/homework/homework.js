@@ -24,6 +24,12 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+  var i;
+  var vector=[];
+  for(i=0;i<array.length;i++){
+    vector.push(array[i]+1);
+  }
+  return vector;
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -50,13 +56,12 @@ function dePalabrasAFrase(palabras) {
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
   var cadena="";
-  for(var i=0;i<palabras.length+1;i++){
+  for(var i=0;i<palabras.length;i++){
     cadena=cadena+palabras[i];
     cadena=cadena+" ";
   }
   return cadena;
 }
-
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
@@ -70,24 +75,29 @@ function arrayContiene(array, elemento) {
   }
 }
 
-
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
   var suma=0;
   var i;
-  for(i=0;i<=numeros.length;i++){
+  for(i=0;i<numeros.length;i++){
     suma+=numeros[i];
   }
   return suma;
 }
 
-
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  var i, suma=0, promedio=0, numero=0;
+  numero=resultadosTest.length;
+  for(i=0;i<resultadosTest.length;i++){
+    suma+=resultadosTest[i];
+    promedio=suma/numero;
+  }
+  return promedio;
 }
 
 
