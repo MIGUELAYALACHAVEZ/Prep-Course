@@ -122,7 +122,6 @@ function multiplicarArgumentos() {
 
 }
 
-
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
@@ -149,7 +148,6 @@ function empiezaConNueve(n) {
 
 }
 
-
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
@@ -169,7 +167,6 @@ function todosIguales(arreglo) {
   }
   
 } 
-
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
@@ -191,7 +188,6 @@ function mesesDelAño(array) {
   }
 }
 
-
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
@@ -205,7 +201,6 @@ function mayorACien(array) {
   }
   return v;
 }
-
 
 function breakStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -226,6 +221,16 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var i=0,c=1;
+  var v=[];
+  while(i<10){
+    if(numero!=5){
+      v.push(numero+2);
+    }
+    i++;
+    c++;
+  }  
+  return v;
 }
 
 
