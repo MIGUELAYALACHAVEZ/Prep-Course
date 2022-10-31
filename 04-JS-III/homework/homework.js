@@ -3,20 +3,21 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+  var i=0;
+  return array[i];
 }
-
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  return array.pop();
 }
-
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+  return (array.length);
 }
-
 
 function incrementarPorUno(array) {
   // "array" debe ser una matriz de enteros (int/integers)
@@ -25,21 +26,22 @@ function incrementarPorUno(array) {
   // Tu código:
 }
 
-
 function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+  array.push(elemento);
+  return (array);
 }
-
 
 function agregarItemAlComienzoDelArray(array, elemento) {
   // Añade el "elemento" al comienzo del array
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  array.unshift(elemento);
+  return array;
 }
-
 
 function dePalabrasAFrase(palabras) {
   // "palabras" es un array de strings/cadenas
@@ -47,6 +49,12 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  var cadena="";
+  for(var i=0;i<palabras.length+1;i++){
+    cadena=cadena+palabras[i];
+    cadena=cadena+" ";
+  }
+  return cadena;
 }
 
 
@@ -54,6 +62,12 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for(var i=0;i<array.length+1;i++){
+    if(array[i]===elemento)
+      return true;
+    else
+      return false;
+  }
 }
 
 
@@ -61,6 +75,12 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  var suma=0;
+  var i;
+  for(i=0;i<=numeros.length;i++){
+    suma+=numeros[i];
+  }
+  return suma;
 }
 
 
