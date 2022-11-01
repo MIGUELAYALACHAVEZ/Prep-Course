@@ -259,14 +259,12 @@ function continueStatement(numero) {
   for(i=0;i<10;i++){
     if(i!=4){
       v.push(suma+=2);
-      
     }else{
       continue;
     }
   }  
   return v;
 }
-
 
 // No modificar nada debajo de esta línea
 // --------------------------------
