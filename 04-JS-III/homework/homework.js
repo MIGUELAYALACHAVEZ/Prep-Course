@@ -119,12 +119,28 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-
+  var i,c=1;
+  if(arguments.length===0){
+    return 0;
+  }else if(arguments.length===1){
+    return arguments[0];
+  }else{
+    for(i=0;i<arguments.length;i++){
+      c*=arguments[i];
+    }
+  }return c;
 }
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+  var s=0,i;
+  for(i=0;i<arreglo.length;i++){
+    if(arreglo[i]>18){
+      s++;
+    }
+  }
+  return s;
 }
 
 
@@ -145,7 +161,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-
+  var cadena=n.toString();
+  if(cadena.charAt(0)==='9'){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 function todosIguales(arreglo) {
@@ -210,9 +231,21 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-
+  var i,suma=numero;
+  var v=[];
+  for(i=0;i<10;i++){
+    suma+=2;
+    if(suma===i){
+      break;
+    }else{
+      v.push(suma);
+    }
+  }if(i<10){
+    return "Se interrumpió la ejecución";
+  }else{
+    return v;
+  } 
 }
-
 
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -221,14 +254,15 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
-  var i=0,c=1;
+  var i=0, suma=numero;
   var v=[];
-  while(i<10){
-    if(numero!=5){
-      v.push(numero+2);
+  for(i=0;i<10;i++){
+    if(i!=4){
+      v.push(suma+=2);
+      
+    }else{
+      continue;
     }
-    i++;
-    c++;
   }  
   return v;
 }
