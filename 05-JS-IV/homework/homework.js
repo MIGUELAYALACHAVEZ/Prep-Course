@@ -137,13 +137,16 @@ function sumarLikesDeUsuario (usuario) {
   // Tu código:
   var i,sum=0;
   for(i=0;i<usuario['posts'].length;i++){
-    sum+=posts['likes'];
+    sum+=usuario['posts'][i]['likes'];
+    //sum+=usuario.posts[i].likes;
   }
+  return sum;
 }
 
 function agregarMetodoCalculoDescuento (producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
-  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
+  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") 
+  // y "porcentajeDeDescuento" para obtener el descuento
   // El método resta el descuento del precio y devuelve el precio con descuento
   // Devuelve el objeto "producto" al final de la función
   // Ejemplo:
@@ -151,7 +154,13 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
+  precio=1;
 
+  producto['calcularPrecioDescuento']=function(){
+    precio=producto['precio']-(producto['precio']*producto['porcentajeDeDescuento']);
+    return precio;
+  }
+  return producto;
 }
 
 // No modificar nada debajo de esta línea
