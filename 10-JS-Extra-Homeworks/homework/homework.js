@@ -10,6 +10,7 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  
 }
 
 
@@ -43,6 +44,15 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var cadena=numero.toString();
+  cadena=cadena.split("").reverse().join("");
+  cadena=parseInt(cadena);
+
+  if(cadena===numero){
+    return "Es capicua";
+  }else{
+    return "No es capicua";
+  }
 }
 
 
@@ -50,6 +60,15 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var i,nuevaCadena="";
+  for(i=0;i<cadena.length;i++){
+    if(cadena.charAt(i)==='a'||cadena.charAt(i)==='b'||cadena.charAt(i)==='c'){
+      continue;
+    }else{
+      nuevaCadena+=cadena.charAt(i);
+    }
+  }
+  return nuevaCadena;
 }
 
 
@@ -65,10 +84,18 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí
+  var v=[],i,j;
+  for(i=0;i<arreglo1.length;i++){
+    for(j=0;j<arreglo2.length;j++){
+      if(arreglo1[i]===arreglo2[j]){
+        v.push(arreglo1[i]);
+        break;
+      }
+    }
+  }
+  return v;
 }
-
-
 
 // No modificar nada debajo de esta línea
 // --------------------------------
