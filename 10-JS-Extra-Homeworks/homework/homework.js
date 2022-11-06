@@ -10,7 +10,7 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-  
+  console.log(objeto);
 }
 
 
@@ -36,6 +36,7 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+
 } 
 
 
@@ -76,8 +77,18 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  var i,j,aux=0;
+  for(i=0;i<arr.length;i++){
+    for(j=i+1;j<arr.length;j++){
+      if(arr[j].length<arr[i].length){
+        aux=arr[j];
+        arr[j]=arr[i];
+        arr[i]=aux;
+      }
+    }
+  }
+  return arr;
 }
-
 
 function buscoInterseccion(arreglo1, arreglo2){
   //Existen dos arrays, cada uno con 5 números. A partir de ello, escribir una función que permita 
